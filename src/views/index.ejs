@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI オーバービュー</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">AI オーバービュー</div>
+    </header>
+
+    <form class="search-form" action="/" method="GET">
+      <input type="text" name="query" class="search-input" placeholder="検索キーワードを入力" value="<%= query || '' %>" required>
+      <button type="submit" class="search-btn">検索</button>
+    </form>
+
+    <% if (error) { %>
+      <div class="error-message">
+        <%= error %>
+      </div>
+    <% } %>
+
+    <% if (aiOverview) { %>
+      <div class="ai-overview">
+        <div class="ai-overview-header">
+          <div class="ai-overview-title">AIオーバービュー</div>
+        </div>
+
+        <% if (aiOverview.thumbnail) { %>
+          <img src="<%= aiOverview.thumbnail %>" alt="サムネイル" class="thumbnail">
+        <% } %>
+
+        <div class="text-blocks">
+          <% aiOverview.text_blocks.forEach(block => { %>
+            <div class="text-block">
+              <% if (block.type === 'paragraph') { %>
+                <p class="paragraph"><%= block.snippet %></p>
+              <% } else if (block.type === 'list' && block.list) { %>
+                <ul class="list">
+                  <% block.list.forEach(item => { %>
+                    <li class="list-item">
+                      <% if (item.title) { %>
+                        <div class="list-item-title"><%= item.title %></div>
+                      <% } %>
+                      <div class="list-item-content"><%= item.snippet %></div>
+                    </li>
+                  <% }); %>
+                </ul>
+              <% } %>
+            </div>
+          <% }); %>
+        </div>
+
+        <div class="references">
+          <h3 class="references-title">参考資料</h3>
+          <% aiOverview.references.forEach(ref => { %>
+            <div class="reference">
+              <a href="<%= ref.link %>" class="reference-title" target="_blank"><%= ref.title %></a>
+              <div class="reference-source"><%= ref.source %></div>
+              <% if (ref.snippet) { %>
+                <div class="reference-snippet"><%= ref.snippet %></div>
+              <% } %>
+            </div>
+          <% }); %>
+        </div>
+      </div>
+    <% } else if (query) { %>
+      <p>「<%= query %>」に関するAIオーバービューは見つかりませんでした。</p>
+    <% } %>
+  </div>
+</body>
+</html> 

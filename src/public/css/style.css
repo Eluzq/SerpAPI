@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #202124;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #4285f4;
+  margin-bottom: 10px;
+}
+
+.search-form {
+  display: flex;
+  margin-bottom: 30px;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 12px 20px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-btn {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #3367d6;
+}
+
+.ai-overview {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.ai-overview-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.ai-overview-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.ai-overview-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #202124;
+}
+
+.text-block {
+  margin-bottom: 15px;
+}
+
+.paragraph {
+  font-size: 16px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.list {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.list-item {
+  margin-bottom: 12px;
+}
+
+.list-item-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.references {
+  margin-top: 20px;
+  border-top: 1px solid #dadce0;
+  padding-top: 15px;
+}
+
+.references-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #4d5156;
+}
+
+.reference {
+  margin-bottom: 15px;
+}
+
+.reference-title {
+  font-weight: bold;
+  color: #1a0dab;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.reference-title:hover {
+  text-decoration: underline;
+}
+
+.reference-source {
+  color: #4d5156;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.reference-snippet {
+  color: #4d5156;
+  font-size: 14px;
+}
+
+.thumbnail {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.error-message {
+  background-color: #fce8e6;
+  color: #c5221f;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  
+  .search-form {
+    flex-direction: column;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  
+  .search-input {
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .search-btn {
+    border-radius: 8px;
+  }
+} 

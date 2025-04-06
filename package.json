@@ -1,0 +1,25 @@
+{
+  "name": "serpapi-ai-overview",
+  "version": "1.0.0",
+  "description": "SerpAPIを使用してAIOverviewを抽出するツール",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc && npm run copy-views && npm run copy-public",
+    "copy-views": "xcopy /E /I src\\views dist\\views",
+    "copy-public": "xcopy /E /I src\\public dist\\public",
+    "start": "node dist/index.js",
+    "start:web": "node dist/webServer.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.8.10",
+    "typescript": "^5.2.2"
+  }
+}
